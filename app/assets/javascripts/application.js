@@ -12,5 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+/* Appel des gemmes propres à l'auto-complétion de gmaps */
+//= require jquery-ui
+//= require gmaps-auto-complete
 //= require_tree .
+//= require bootstrap-sprockets
+
+//= require turbolinks

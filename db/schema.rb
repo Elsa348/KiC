@@ -13,6 +13,16 @@
 
 ActiveRecord::Schema.define(version: 20151204142438) do
 
+  create_table "activities", force: :cascade do |t|
+    t.integer  "artisan_id"
+    t.string   "job"
+    t.string   "services"
+    t.string   "description"
+    t.string   "images"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "avis", force: :cascade do |t|
     t.integer  "note"
     t.string   "commentaire"
