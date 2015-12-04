@@ -50,3 +50,13 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
+# Gemmes propres à l'auto-complétion de gmaps
+gem 'jquery-ui-rails'
+gem 'gmaps-autocomplete-rails'
+
+# Gemmes propres à Bootstrap
+gem 'bootstrap-sass'
+
+# Gemmes propres à Simple-form
+gem 'simple_form'

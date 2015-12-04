@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_activity: 
+  id_artisan: 
+  metier: 
+  prestations: 
+  description: 
+  images: 
+
+two:
+  id_activity: 
+  id_artisan: 
+  metier: 
+  prestations: 
+  description: 
+  images: 
