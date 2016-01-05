@@ -2,6 +2,13 @@ Rails.application.routes.draw do
   resources :reviews
   devise_for :users
   resources :users
+  namespace :admin do
+    DashboardManifest::DASHBOARDS.each do |dashboard_resource|
+      resources dashboard_resource
+    end
+
+    root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
+  end
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :activities

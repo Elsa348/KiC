@@ -63,3 +63,6 @@ gem 'bootstrap-sass'
 
 # Gemmes propres à Simple-form
 gem 'simple_form'
+
+# Gemmes propres à Administrate (module d'administration back-office)
+gem 'administrate', '~> 0.1.2'
