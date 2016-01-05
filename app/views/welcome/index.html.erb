@@ -1,2 +1,63 @@
-<h1>KiC</h1>
+<html>
+  <body>
 
+    <!-- CARROUSSEL -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <!-- CHARGEMENT DES IMAGES -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <%= image_tag 'photo1' %>
+        </div>
+
+        <div class="item">
+          <%= image_tag 'photo2' %>
+        </div>
+
+        <div class="item">
+           <%= image_tag 'photo3' %>
+        </div>
+
+        <div class="item">
+          <%= image_tag 'photo4' %>
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <!-- FIN CARROUSSEL -->
+
+    <div class="row marketing-block">
+      <div class="col-xs-4 col-sm-4 text-center">
+        <span class="glyphicon glyphicon-user marketing" aria-hidden="true"></span>
+        <p> Artisans sérieux et vérifiés</p>
+      </div>
+      <div class="col-xs-4 col-sm-4 text-center">
+        <span class="glyphicon glyphicon-ok marketing" aria-hidden="true"></span>
+        <p> Avis fiables et contrôlés</p>
+      </div>
+      <div class="col-xs-4 col-sm-4 text-center">
+        <span class="glyphicon glyphicon-thumbs-up marketing" aria-hidden="true"></span>
+        <p> Contact et devis simplifiés</p>
+      </div>
+    </div>
+
+
+  </body>
+</html>
