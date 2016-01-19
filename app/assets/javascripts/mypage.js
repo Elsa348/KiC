@@ -6,7 +6,7 @@ $( document ).ready(function() {
       mapElem: "#gmaps-canvas",
       zoomLevel: 2,
       mapType: google.maps.MapTypeId.ROADMAP,
-      inputField: '#search_localisation',
+      inputField: '#search_location',
       errorField: '#gmaps-error'
     });
 

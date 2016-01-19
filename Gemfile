@@ -66,3 +66,6 @@ gem 'simple_form'
 
 # Gemmes propres à Administrate (module d'administration back-office)
 gem 'administrate', '~> 0.1.2'
+
+# Gemmes propres à la recherche dans le site
+gem 'ransack'
