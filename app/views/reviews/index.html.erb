@@ -1,29 +1,53 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Reviews</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Rating</th>
-      <th>Comment</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
+<div class="row ">
+  <div class="col-xs-12 .col-md-8">
+    <h1 class="title">Avis & notes</h1>
+  </div>
+</div>
+ <% if @reviews.size > 0 %>
+<div class="row ">
+  <div class="col-xs-6 col-sm-4 text-center review">
+            <p class="note workernote"> <%= average_rating(@reviews) %></p><p class="note notetotal">/5</p>
+         <% average_rating(@reviews).times do %>
+           <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+         <% end %>
+         <% empty_stars(@reviews).times do %>
+           <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+         <% end %>
+   </div>
+   <div class="col-xs-6 col-sm-4 text-center">
+     <%= link_to "Donnez votre avis", new_review_path, :class => "btn btn-default btn-md" %>
+   </div>
+</div>
+<div class="row ">
+  <div class="col-xs-12 col-md-8">
+<table class="table tablecomment">
   <tbody>
     <% @reviews.each do |review| %>
       <tr>
-        <td><%= review.rating %></td>
-        <td><%= review.comment %></td>
-        <td><%= link_to 'Show', review %></td>
-        <td><%= link_to 'Edit', edit_review_path(review) %></td>
-        <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+         <div class="note comment"> <%= review.rating %> <p class="note notetotal">/5</p></div>
+         <% review.rating.times do %>
+           <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+         <% end %>
+         <% review.empty_stars.times do %>
+           <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+         <% end %>
+          </br>
+          <div class="comment" > <%= review.comment %> </div>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Review', new_review_path %>
+</div>
+</div>
+<% else %>
+    <div class="row ">
+       <div class="col-xs-6 col-sm-4 text-center">
+         <%= link_to "Déposez un avis", new_review_path, :class => "btn btn-default btn-md" %>
+       </div>
+    </div>
+<% end %>
