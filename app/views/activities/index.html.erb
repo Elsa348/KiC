@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Activities</h1>
+<h1>Vos activités</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Id activity</th>
-      <th>Id artisan</th>
-      <th>Metier</th>
+      <th>n° activité</th>
+      <th>n° artisan</th>
+      <th>Métier</th>
       <th>Prestations</th>
       <th>Description</th>
       <th>Images</th>
@@ -24,9 +24,9 @@
         <td><%= activity.prestations %></td>
         <td><%= activity.description %></td>
         <td><%= activity.images %></td>
-        <td><%= link_to 'Show', activity %></td>
-        <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
-        <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Visualiser', activity %></td>
+        <td><%= link_to 'Éditer', edit_activity_path(activity) %></td>
+        <td><%= link_to 'Supprimer', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Activity', new_activity_path %>
+<%= link_to 'Nouvelle activité', new_activity_path %>

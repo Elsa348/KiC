@@ -1,61 +1,63 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Workspace</title>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-</head>
-<body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">KiC</a>
+  <head>
+    <title>Workspace</title>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--<a class="navbar-brand" href="#">KiC</a>-->
+          <%= link_to "KiC", root_url, class: "navbar-brand" %>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+
+            <!-- MENU DEROULANT ARTISAN -->
+            <li role="separator" class="divider"></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Artisan <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Mon profil</a></li>
+                <li><a href="#">Mes chantiers</a></li>
+                <li><a href="#">Mes devis</a></li>
+                <li>
+                  <%= link_to "Mes avis", reviews_url %>
+                </li>
+              </ul>
+            </li>
+            <!-- FIN MENU DEROULANT ARTISAN -->
+
+            <!-- MENU DEROULANT CLIENT -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Client <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Rechercher un artisan</a></li>
+                <li><a href="#">Mon profil</a></li>
+                <li><a href="#">Mes avis</a></li>
+              </ul>
+            </li>
+            <!-- FIN MENU DEROULANT CLIENT -->
+          </ul>
+        </div>
       </div>
+    </nav>
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
+    <%= yield %>
 
-          <!-- MENU DEROULANT ARTISAN -->
-          <li role="separator" class="divider"></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Artisan <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Mon profil</a></li>
-              <li><a href="#">Mes chantiers</a></li>
-              <li><a href="#">Mes devis</a></li>
-              <li><a href="#">Mes avis</a></li>
-            </ul>
-          </li>
-          <!-- FIN MENU DEROULANT ARTISAN -->
-
-          <!-- MENU DEROULANT CLIENT -->
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Client <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Rechercher un artisan</a></li>
-              <li><a href="#">Mon profil</a></li>
-              <li><a href="#">Mes avis</a></li>
-            </ul>
-          </li>
-          <!-- FIN MENU DEROULANT CLIENT -->
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-
-
-  <%= yield %>
-
-</body>
+  </body>
 </html>

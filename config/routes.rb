@@ -1,7 +1,19 @@
 Rails.application.routes.draw do
+
+  # AVIS
   resources :reviews
+
+  # UTILISATEURS
   devise_for :users
   resources :users
+
+  # ACTIVITES
+  resources :activities
+
+  # PROFILS
+  resources :profile
+
+  # ADMINISTRATION
   namespace :admin do
     DashboardManifest::DASHBOARDS.each do |dashboard_resource|
       resources dashboard_resource
@@ -9,9 +21,6 @@ Rails.application.routes.draw do
 
     root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
   end
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  resources :activities
 
 
   root 'welcome#index'

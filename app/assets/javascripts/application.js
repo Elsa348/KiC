@@ -17,5 +17,3 @@
 //= require gmaps-auto-complete
 //= require_tree .
 //= require bootstrap-sprockets
-
-//= require turbolinks
