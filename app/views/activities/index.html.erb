@@ -1,13 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Vos activités</h1>
-
-<table>
+<div class="row ">
+  <div class="col-xs-12 .col-md-8">
+    <h1 class="title">Liste d'activitités</h1>
+  </div>
+</div>
+<div class="row ">
+       <div class="col-xs-6 col-sm-4 text-center">
+          <%= link_to "Nouvelle activité", new_activity_path, :class => "btn btn-default btn-md" %>
+       </div>
+</div>
+<table  class="table table-striped">
   <thead>
     <tr>
-      <th>n° activité</th>
-      <th>n° artisan</th>
-      <th>Métier</th>
+      <th>N° activité</th>
+      <th>N° artisan</th>
+      <th>Metier</th>
       <th>Prestations</th>
       <th>Description</th>
       <th>Images</th>
@@ -32,6 +40,3 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'Nouvelle activité', new_activity_path %>

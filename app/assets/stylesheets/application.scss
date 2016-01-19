@@ -19,9 +19,15 @@
 @import "bootstrap";
 
 #gmaps-canvas {
-  height:50%;
-  width:75%;
-  margin:25px;
+  width:100%;
+  padding:25px;
+  height: 250px;
+}
+
+@media (min-width: $screen-md-min) {
+  #gmaps-canvas {
+    height: 400px;
+  }
 }
 
 .marketing {
@@ -34,3 +40,42 @@
   margin-top: 15px;
 }
 
+.review {
+  border-right: 2px solid #337ab7;
+}
+
+.note {
+
+    display: inline;
+
+}
+
+.workernote {
+  font-size : 45px;
+  text-align : center;
+}
+
+.title {
+  margin-left:15px;
+}
+
+.notetotal {
+    margin-right:10px;
+}
+
+.comment {
+  text-align: justify;
+  margin-left : 10px;
+  margin-right: 10px;
+}
+.tablecomment {
+  margin-top : 15px;
+}
+
+.form {
+  margin-left:5px;
+}
+
+.title {
+  text-align : center;
+}

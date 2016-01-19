@@ -6,7 +6,7 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -32,11 +32,15 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Artisan <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Mon profil</a></li>
+                <li>
+                  <% if user_signed_in? %>
+                  <%= link_to 'Mon profil',  user_url(current_user) %>
+                  <% end %>
+                </li>
                 <li><a href="#">Mes chantiers</a></li>
                 <li><a href="#">Mes devis</a></li>
                 <li>
-                  <%= link_to "Mes avis", reviews_url %>
+                  <%= link_to 'Mes avis',  reviews_url %>
                 </li>
               </ul>
             </li>
@@ -47,11 +51,29 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Client <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Rechercher un artisan</a></li>
-                <li><a href="#">Mon profil</a></li>
-                <li><a href="#">Mes avis</a></li>
+                <li>
+                  <% if user_signed_in? %>
+                   <%= link_to 'Mon profil',  user_url(current_user) %>
+                   <% end %>
+                </li>
+                <li>
+                  <%= link_to 'Mes avis',  reviews_url %>
+                </li>
               </ul>
             </li>
             <!-- FIN MENU DEROULANT CLIENT -->
+            <% if user_signed_in? %>
+            <li>
+                  <%= link_to 'Déconnexion', destroy_user_session_path, method: :delete %>
+            </li>
+            <% else %>
+            <li>
+                  <%= link_to 'Connexion', new_user_session_url %>
+            </li>
+            <li>
+                  <%= link_to 'Inscription', new_user_registration_url %>
+            </li>
+            <% end %>
           </ul>
         </div>
       </div>

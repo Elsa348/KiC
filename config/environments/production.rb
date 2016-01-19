@@ -76,4 +76,17 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+
+  config.action_mailer.default_url_options = { host: 'https://dashboard.heroku.com/apps/shielded-mesa-7270/' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.mailgun.org',
+    port:    2525,
+    enable_starttls_auto: true,
+    user_name:'postmaster@sandbox12038671c58d4b4796a7e1cc31829c93.mailgun.org',
+    password: '08f3a10105405118ed42bfa27a731aa2 ',
+    authentication: 'login',
+    domain: 'sandbox12038671c58d4b4796a7e1cc31829c93.mailgun.org',
+  }
 end
