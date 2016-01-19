@@ -1,5 +1,34 @@
+<p id="notice"><%= notice %></p>
+
 <div class="row ">
   <div class="col-xs-12 .col-md-8">
     <h1 class="title">Mes chantiers</h1>
   </div>
 </div>
+
+<table  class="table table-striped">
+  <thead>
+    <tr>
+      <th>Activité</th>
+      <th colspan="3">Client </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if !@activities.nil? && !@users.nil?%>
+    <% @activities.each do |activity| %>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= activity.job %></td>
+        <% if !current_user.nil? && current_user == activity.id_artisan %>
+        <td><%= user.lastname %></td>
+        <% end %>
+        <td><%= link_to 'Visualiser', activity %></td>
+        <td><%= link_to 'Éditer', edit_activity_path(activity) %></td>
+        <td><%= link_to 'Supprimer', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
