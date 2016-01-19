@@ -42,12 +42,24 @@
     </div>
     <!-- FIN CARROUSSEL -->
 
+    <!-- DEBUT RECHERCHE ARTISAN -->
+    <div class="field">
+      <%= search_form_for @q do |f| %>
+
+      <!-- #Search if the name field contains...-->
+      <%= f.search_field :job_cont %>
+
+      <%= f.submit %>
+      <% end %>
+    </div>
+    <!-- FIN RECHERCHE ARTISAN -->
+
     <br>
     <!-- CARTE GMAPS -->
     <div class="field">
       <%= form_for(:search) do |f| %>
-        <%= f.label :localisation %><br>
-        <%= f.text_field :localisation %>
+        <%= f.label :Localisation %><br>
+        <%= f.text_field :location %>
       <% end %>
     </div>
 
