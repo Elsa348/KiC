@@ -19,8 +19,15 @@
 @import "bootstrap";
 
 #gmaps-canvas {
-  width:75%;
-  margin:25px;
+  width:100%;
+  padding:25px;
+  height: 250px;
+}
+
+@media (min-width: $screen-md-min) {
+  #gmaps-canvas {
+    height: 400px;
+  }
 }
 
 .marketing {
