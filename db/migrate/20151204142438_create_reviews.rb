@@ -1,7 +1,10 @@
 class CreateReviews < ActiveRecord::Migration
   def change
-      rename_column :reviews, :note, :rating
-      rename_column :reviews, :commentaire, :comment
+      create_table :reviews do |t|
+      t.integer :rating
+      t.string :comment
 
+      t.timestamps null: false
+    end
   end
 end
