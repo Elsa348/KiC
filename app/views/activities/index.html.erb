@@ -13,8 +13,6 @@
 <table  class="table table-striped">
   <thead>
     <tr>
-      <th>N° activité</th>
-      <th>N° artisan</th>
       <th>Metier</th>
       <th>Prestations</th>
       <th>Description</th>
@@ -26,10 +24,8 @@
   <tbody>
     <% @activities.each do |activity| %>
       <tr>
-        <td><%= activity.id_activity %></td>
-        <td><%= activity.id_artisan %></td>
-        <td><%= activity.metier %></td>
-        <td><%= activity.prestations %></td>
+        <td><%= activity.job %></td>
+        <td><%= activity.services %></td>
         <td><%= activity.description %></td>
         <td><%= activity.images %></td>
         <td><%= link_to 'Visualiser', activity %></td>
