@@ -1,5 +1,4 @@
-<html>
-  <body>
+
 
     <!-- CARROUSSEL -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -43,6 +42,21 @@
     </div>
     <!-- FIN CARROUSSEL -->
 
+    <br>
+    <!-- CARTE GMAPS -->
+    <div class="field">
+      <%= form_for(:search) do |f| %>
+        <%= f.label :localisation %><br>
+        <%= f.text_field :localisation %>
+      <% end %>
+    </div>
+
+    <div id='gmaps-error'></div>
+    <div id='gmaps-canvas'></div>
+    <!-- FIN CARTE GMAPS -->
+    <br>
+
+    <!-- DEBUT ICONES PRESENTATION -->
     <div class="row marketing-block">
       <div class="col-xs-4 col-sm-4 text-center">
         <span class="glyphicon glyphicon-user marketing" aria-hidden="true"></span>
@@ -57,7 +71,4 @@
         <p> Contact et devis simplifiés</p>
       </div>
     </div>
-
-
-  </body>
-</html>
+    <!-- FIN ICONES PRESENTATION -->
