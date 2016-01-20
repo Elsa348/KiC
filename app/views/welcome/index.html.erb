@@ -42,6 +42,8 @@
     </div>
     <!-- FIN CARROUSSEL -->
 
+
+    <br>
     <!-- DEBUT RECHERCHE ARTISAN -->
     <div class="field">
       <%= search_form_for @q, url: root_path do |f| %>
@@ -60,7 +62,9 @@
       <h2><%= activity.job %></h2>
         <ul>
           <% activity.users.each do |user| %>
-            <li><%= user.lastname %> <%= user.firstname %></li>
+            <% if user.role == 0 %>
+              <li><%= user.lastname %> <%= user.firstname %> <%= user.phone %></li>
+            <% end %>
           <% end %>
         </ul>
       <% end %>

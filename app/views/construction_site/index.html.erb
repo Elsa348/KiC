@@ -16,17 +16,19 @@
 
   <tbody>
     <% if !@activities.nil? && !@users.nil?%>
-    <% @activities.each do |activity| %>
-      <tr>
-        <td><%= activity.job %></td>
+      <% @activities.each do |activity| %>
+        <tr>
+          <td><%= activity.job %></td>
         <% activity.users.each do |user| %>
-        <td><%= user.lastname %></td>
+        <% if user.role == 0 %>
+          <td><%= user.lastname %></td>
         <% end %>
-        <td><%= link_to 'Visualiser', activity %></td>
-        <td><%= link_to 'Éditer', edit_activity_path(activity) %></td>
-        <td><%= link_to 'Supprimer', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+      <td><%= link_to 'Visualiser', activity %></td>
+      <td><%= link_to 'Éditer', edit_activity_path(activity) %></td>
+      <td><%= link_to 'Supprimer', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+      <% end %>
     <% end %>
   </tbody>
 </table>
