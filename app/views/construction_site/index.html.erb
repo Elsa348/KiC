@@ -17,17 +17,15 @@
   <tbody>
     <% if !@activities.nil? && !@users.nil?%>
     <% @activities.each do |activity| %>
-    <% @users.each do |user| %>
       <tr>
         <td><%= activity.job %></td>
-        <% if !current_user.nil? && current_user == activity.id_artisan %>
+        <% activity.users.each do |user| %>
         <td><%= user.lastname %></td>
         <% end %>
         <td><%= link_to 'Visualiser', activity %></td>
         <td><%= link_to 'Éditer', edit_activity_path(activity) %></td>
         <td><%= link_to 'Supprimer', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
     <% end %>
     <% end %>
   </tbody>
