@@ -10,36 +10,52 @@
       </ul>
     </div>
   <% end %>
+<div class="row ">
+  <div class="col-xs-12 col-sm-8 form">
+    <div class="field">
+      <%= f.label :lastname, "Nom" %><br>
+      <%= f.text_field :lastname %>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-8 form">
+    <div class="field">
+      <%= f.label :firstname, "Prénom" %><br>
+      <%= f.text_field :firstname %>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-8 form">
+    <div class="field">
+      <%= f.label :phone, "Adresse" %><br>
+      <%= f.text_field :phone %>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-8 form">
+    <div class="field">
+      <%= f.label :email, "Email" %><br>
+      <%= f.text_field :email %>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-8 form">
+    <div class="field">
+      <%= f.label :role, "Métier" %><br>
+      <%= f.number_field :role %>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-8 form">
+    <div class="field">
+        <%= f.label :password, "Mot de passe" %><br />
+        <%= f.password_field :password %><br />
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-8 form">
+    <div class="field">
+      <%= f.label :password_confirmation, "Confirmation du mot de passe" %><br />
+      <%= f.password_field :password_confirmation %>
+    </div>
+  </div>
+</div>
 
-  <div class="field">
-    <%= f.label :lastname %><br>
-    <%= f.text_field :lastname %>
-  </div>
-  <div class="field">
-    <%= f.label :firstname %><br>
-    <%= f.text_field :firstname %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :role %><br>
-    <%= f.number_field :role %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %><br />
-  </div>
-  <div class="field">
-  <%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="actions">
+  <%= f.submit %>
+</div>
 <% end %>

@@ -1,13 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Activities</h1>
-
-<table>
+<div class="row ">
+  <div class="col-xs-12 .col-md-8">
+    <h1 class="title">Liste d'activitités</h1>
+  </div>
+</div>
+<div class="row ">
+       <div class="col-xs-6 col-sm-4 text-center">
+          <%= link_to "Nouvelle activité", new_activity_path, :class => "btn btn-default btn-md" %>
+       </div>
+</div>
+<table  class="table table-striped">
   <thead>
     <tr>
-      <th>Id activity</th>
-      <th>Id artisan</th>
-      <th>Metier</th>
+      <th>Métier</th>
       <th>Prestations</th>
       <th>Description</th>
       <th>Images</th>
@@ -18,20 +24,15 @@
   <tbody>
     <% @activities.each do |activity| %>
       <tr>
-        <td><%= activity.id_activity %></td>
-        <td><%= activity.id_artisan %></td>
-        <td><%= activity.metier %></td>
-        <td><%= activity.prestations %></td>
+        <td><%= activity.job %></td>
+        <td><%= activity.services %></td>
         <td><%= activity.description %></td>
         <td><%= activity.images %></td>
-        <td><%= link_to 'Show', activity %></td>
-        <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
-        <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Visualiser', activity %></td>
+        <td><%= link_to 'Éditer', edit_activity_path(activity) %></td>
+        <td><%= link_to 'Supprimer', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Activity', new_activity_path %>

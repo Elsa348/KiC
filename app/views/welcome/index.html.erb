@@ -1,5 +1,4 @@
-<html>
-  <body>
+
 
     <!-- CARROUSSEL -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -15,19 +14,19 @@
       <!-- CHARGEMENT DES IMAGES -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <%= image_tag 'photo1' %>
+          <%= image_tag 'photo1.jpg' %>
         </div>
 
         <div class="item">
-          <%= image_tag 'photo2' %>
+          <%= image_tag 'photo2.jpg' %>
         </div>
 
         <div class="item">
-           <%= image_tag 'photo3' %>
+           <%= image_tag 'photo3.jpg' %>
         </div>
 
         <div class="item">
-          <%= image_tag 'photo4' %>
+          <%= image_tag 'photo4.jpg' %>
         </div>
       </div>
 
@@ -43,6 +42,51 @@
     </div>
     <!-- FIN CARROUSSEL -->
 
+
+    <br>
+    <!-- DEBUT RECHERCHE ARTISAN -->
+    <div class="field search">
+      <%= search_form_for @q, url: root_path do |f| %>
+
+      <!-- #Search if the name field contains...-->
+      <div class="searchlib">
+      <%= f.label :job_cont, "Rechercher une activité" %>
+      </div>      <%= f.search_field :job_cont %>
+
+      <%= f.submit 'Rechercher', :class => 'btn btn-default btn-md  searchbtn'  %>
+      <% end %>
+    </div>
+
+    <div>
+
+      <% @activities.each do |activity| %>
+      <h2><%= activity.job %></h2>
+        <ul>
+          <% activity.users.each do |user| %>
+            <% if user.role == 0 %>
+              <li><%= user.lastname %> <%= user.firstname %> <%= user.phone %></li>
+            <% end %>
+          <% end %>
+        </ul>
+      <% end %>
+
+    </div>
+    <!-- FIN RECHERCHE ARTISAN -->
+
+    <br>
+    <!-- CARTE GMAPS -->
+    <div class="field form">
+      <%= form_for(:search) do |f| %>
+        <%= f.label :Localisation %><br>
+        <%= f.text_field :location %>
+      <% end %>
+    </div>
+    <div id='gmaps-error'></div>
+    <div id='gmaps-canvas'></div>
+    <!-- FIN CARTE GMAPS -->
+    <br>
+
+    <!-- DEBUT ICONES PRESENTATION -->
     <div class="row marketing-block">
       <div class="col-xs-4 col-sm-4 text-center">
         <span class="glyphicon glyphicon-user marketing" aria-hidden="true"></span>
@@ -57,7 +101,4 @@
         <p> Contact et devis simplifiés</p>
       </div>
     </div>
-
-
-  </body>
-</html>
+    <!-- FIN ICONES PRESENTATION -->

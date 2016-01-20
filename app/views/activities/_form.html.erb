@@ -10,30 +10,35 @@
       </ul>
     </div>
   <% end %>
+  <div class="row ">
+    <div class="col-xs-12 col-sm-8 form">
+      <div class="field">
+        <%= f.label :job %><br>
+        <%= f.text_field :job %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-8 form">
+      <div class="field">
+        <%= f.label :services %><br>
+        <%= f.text_field :services %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-8 form">
+      <div class="field">
+        <%= f.label :description %><br>
+        <%= f.text_field :description %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-8 form">
+      <div class="field">
+        <%= f.label :images %><br>
+        <%= f.text_field :images %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= f.label :artisan_id %><br>
-    <%= f.text_field :artisan_id %>
+
   </div>
-  <div class="field">
-    <%= f.label :job %><br>
-    <%= f.text_field :job %>
-  </div>
-  <div class="field">
-    <%= f.label :services %><br>
-    <%= f.text_field :services %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :images %><br>
-    <%= f.text_field :images %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-<div id='gmaps-error'></div>
-<div id='gmaps-canvas'></div>
+   <div class="actions">
+      <%= f.submit %>
+    </div>
+     <% end %>

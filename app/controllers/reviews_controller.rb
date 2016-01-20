@@ -4,7 +4,11 @@ class ReviewsController < ApplicationController
   # GET /reviews
   # GET /reviews.json
   def index
-    @reviews = Review.all
+    if user_signed_in?
+      @reviews = current_user.reviews
+    else
+      @reviews = Review.all
+    end
   end
 
   # GET /reviews/1
