@@ -79,3 +79,37 @@
 .title {
   text-align : center;
 }
+
+.search {
+  position : absolute;
+  top : 25%;
+  left : 12%;
+  color : #337AB7;
+  font-size:12px;
+
+.searchbtn {
+    color : #337AB7;
+    font-weight : bold;
+  }
+
+  .searchlib {
+    text-align:center;
+  }
+
+}
+
+@media (min-width: $screen-md-min) {
+  .search {
+    position : absolute;
+    top : 55%;
+    left : 30%;
+    color : #337AB7;
+    font-size:25px;
+  }
+  .searchbtn {
+    color : #337AB7;
+    height : 45px;
+    font-weight : bold;
+  }
+}
+

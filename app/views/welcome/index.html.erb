@@ -43,14 +43,15 @@
     <!-- FIN CARROUSSEL -->
 
     <!-- DEBUT RECHERCHE ARTISAN -->
-    <div class="field">
+    <div class="field search">
       <%= search_form_for @q, url: root_path do |f| %>
 
       <!-- #Search if the name field contains...-->
+      <div class="searchlib">
       <%= f.label :job_cont, "Rechercher une activité" %>
-      <%= f.search_field :job_cont %>
+      </div>      <%= f.search_field :job_cont %>
 
-      <%= f.submit %>
+      <%= f.submit 'Rechercher', :class => 'btn btn-default btn-md  searchbtn'  %>
       <% end %>
     </div>
 
@@ -70,13 +71,12 @@
 
     <br>
     <!-- CARTE GMAPS -->
-    <div class="field">
+    <div class="field form">
       <%= form_for(:search) do |f| %>
         <%= f.label :Localisation %><br>
         <%= f.text_field :location %>
       <% end %>
     </div>
-
     <div id='gmaps-error'></div>
     <div id='gmaps-canvas'></div>
     <!-- FIN CARTE GMAPS -->
