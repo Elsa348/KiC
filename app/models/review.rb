@@ -3,5 +3,5 @@ class Review < ActiveRecord::Base
     5 - self.rating
   end
 
-  belongs_to :users
+  belongs_to :user
 end
