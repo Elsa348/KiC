@@ -44,13 +44,27 @@
 
     <!-- DEBUT RECHERCHE ARTISAN -->
     <div class="field">
-      <%= search_form_for @q do |f| %>
+      <%= search_form_for @q, url: root_path do |f| %>
 
       <!-- #Search if the name field contains...-->
+      <%= f.label :job_cont, "Rechercher une activité" %>
       <%= f.search_field :job_cont %>
 
       <%= f.submit %>
       <% end %>
+    </div>
+
+    <div>
+
+      <% @activities.each do |activity| %>
+      <h2><%= activity.job %></h2>
+        <ul>
+          <% activity.users.each do |user| %>
+            <li><%= user.lastname %> <%= user.firstname %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
     </div>
     <!-- FIN RECHERCHE ARTISAN -->
 
